@@ -48,18 +48,6 @@
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="created_at" class="control-label">Created At</label>
-						<div class="form-group">
-							<input type="text" name="created_at" value="<?php echo $this->input->post('created_at'); ?>" class="has-datetimepicker form-control" id="created_at" />
-						</div>
-					</div>
-					<div class="col-md-6">
-						<label for="update_at" class="control-label">Update At</label>
-						<div class="form-group">
-							<input type="text" name="update_at" value="<?php echo $this->input->post('update_at'); ?>" class="has-datetimepicker form-control" id="update_at" />
-						</div>
-					</div>
-					<div class="col-md-6">
 						<label for="statut" class="control-label">Statut</label>
 						<div class="form-group">
 							<input type="text" name="statut" value="<?php echo $this->input->post('statut'); ?>" class="form-control" id="statut" />

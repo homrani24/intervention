@@ -25,7 +25,7 @@ class User extends CI_Controller{
     {
         $data['user'] = $this->User_model->get_all_client();
         
-        $data['_view'] = 'user/index';
+        $data['_view'] = 'user/index2';
         $this->load->view('layouts/main',$data);
     }
 
@@ -43,8 +43,8 @@ class User extends CI_Controller{
 				'email' => $this->input->post('email'),
 				'name' => $this->input->post('name'),
 				'mobile' => $this->input->post('mobile'),
-				'created_at' => $this->input->post('created_at'),
-				'update_at' => $this->input->post('update_at'),
+				'created_at' => date("Y-m-d h:i:sa"),
+				'update_at' =>date("Y-m-d h:i:sa"),
 				'statut' => $this->input->post('statut'),
             );
             
@@ -79,8 +79,7 @@ class User extends CI_Controller{
 					'email' => $this->input->post('email'),
 					'name' => $this->input->post('name'),
 					'mobile' => $this->input->post('mobile'),
-					'created_at' => $this->input->post('created_at'),
-					'update_at' => $this->input->post('update_at'),
+                    'update_at' =>date("Y-m-d h:i:sa"),
 					'statut' => $this->input->post('statut'),
                 );
 
