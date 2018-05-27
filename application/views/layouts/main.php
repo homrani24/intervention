@@ -139,19 +139,7 @@
 							</ul>
                         </li>
                         
-						<li>
-                            <a href="#">
-                                <i class="fa fa-desktop"></i> <span>Reclamation</span>
-                            </a>
-                            <ul class="treeview-menu">
-								<li class="active">
-                                    <a href="<?php echo site_url('reclamation/add');?>"><i class="fa fa-plus"></i> Add</a>
-                                </li>
-								<li>
-                                    <a href="<?php echo site_url('reclamation/index');?>"><i class="fa fa-list-ul"></i> Listing</a>
-                                </li>
-							</ul>
-                        </li>
+					
 						<li>
                             <a href="#">
                                 <i class="fa fa-desktop"></i> <span>User</span>
@@ -192,16 +180,7 @@
 							</ul>
                         </li>
                         
-						<li>
-                            <a href="#">
-                                <i class="fa fa-desktop"></i> <span>Reclamation</span>
-                            </a>
-                            <ul class="treeview-menu">
-								<li>
-                                    <a href="<?php echo site_url('reclamation/index');?>"><i class="fa fa-list-ul"></i> Listing</a>
-                                </li>
-							</ul>
-                        </li>
+						
                         <li>
                             <a href="#">
                                 <i class="fa fa-desktop"></i> <span>Clients</span>
@@ -215,6 +194,23 @@
 
                         <?php } ?>
                         
+                        <?php if($this->session->userdata('logged_in') ["role"] == 3){ ?>
+
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-desktop"></i> <span>Intervention</span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="active">
+                                    <a href="<?php echo site_url('intervention/add');?>"><i class="fa fa-plus"></i> Add</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo site_url('intervention/client_list');?>"><i class="fa fa-list-ul"></i> Listing</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <?php } ?>
+
                     </ul>
                 </section>
                 <!-- /.sidebar -->

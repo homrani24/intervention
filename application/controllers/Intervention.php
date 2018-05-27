@@ -17,6 +17,18 @@ class Intervention extends CI_Controller{
     function index()
     {
         $data['intervention'] = $this->Intervention_model->get_all_intervention();
+        if($this->session->userdata('logged_in')['users_id'] == 3)        
+        $data['_view'] = 'intervention/index2';
+        else
+        $data['_view'] = 'intervention/index';
+        $this->load->view('layouts/main',$data);
+    }
+    /*
+     * Listing of intervention
+     */
+    function client_list()
+    {
+        $data['intervention'] = $this->Intervention_model->get_client_intervention();
         
         $data['_view'] = 'intervention/index';
         $this->load->view('layouts/main',$data);
@@ -37,9 +49,13 @@ class Intervention extends CI_Controller{
 				'id_company' => $this->input->post('id_company'),
 				'date_heure' => $this->input->post('date_heure'),
 				'description' => $this->input->post('description'),
+				'id_user' => $this->session->userdata('logged_in')['users_id'],
             );
             
             $intervention_id = $this->Intervention_model->add_intervention($params);
+            if($this->session->userdata('logged_in')['users_id'] == 3)
+            redirect('intervention/client_list');
+            else
             redirect('intervention/index');
         }
         else
