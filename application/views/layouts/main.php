@@ -19,6 +19,8 @@
         <!-- AdminLTE Skins. Choose a skin from the css/skins
              folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" href="<?php echo site_url('resources/css/_all-skins.min.css');?>">
+        <link rel="stylesheet" href="<?php echo site_url('resources/fullcallendar/fullcalendar.min.css');?>">
+        
     </head>
     
     <body class="hold-transition skin-blue sidebar-mini">
@@ -166,6 +168,16 @@
                                 </li>
 							</ul>
                         </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-desktop"></i> <span>Planing</span>
+                            </a>
+                            <ul class="treeview-menu">
+								<li>
+                                    <a href="<?php echo site_url('Calendrier/index');?>"><i class="fa fa-list-ul"></i> Listing</a>
+                                </li>
+							</ul>
+                        </li>
                         <?php } ?>
                         <?php if($this->session->userdata('logged_in') ["role"] == 2){ ?>
 
@@ -272,5 +284,42 @@
         <script src="<?php echo site_url('resources/js/moment.js');?>"></script>
         <script src="<?php echo site_url('resources/js/bootstrap-datetimepicker.min.js');?>"></script>
         <script src="<?php echo site_url('resources/js/global.js');?>"></script>
+        <script src='<?php echo site_url('resources/fullcallendar/moment.min.js');?>'></script>
+        <script src='<?php echo site_url('resources/fullcallendar/jquery.min.js');?>'></script>
+        <script src='<?php echo site_url('resources/fullcallendar/jquery-ui.custom.min.js');?>'></script>
+        <script src='<?php echo site_url('resources/fullcallendar/fullcalendar.min.js');?>'></script>
+        
     </body>
 </html>
+<script>
+					$('#calendar').fullCalendar({
+                        header: {
+                            left: 'prev,next today',
+                            center: 'title',
+                            right: 'month,basicWeek,basicDay'
+                        },
+                        defaultDate: new Date(),
+                        navLinks: true, 
+                        editable: true,
+                        eventLimit: true, 
+                        editable: true,
+                        events: function(start, end, timezone, callback) {
+                            $.ajax({
+                                url: 'calendrier/calendar_json',						
+                                success: function(json) {
+                                    var events = [];
+                                    json=JSON.parse(json);
+                                    $.each(json, function(arrayID,event) {
+                                        events.push({
+                                            title: event.title,
+                                            start:  event.start // will be parsed
+                                        });
+                                    });
+                                    callback(events);
+                                }
+                            });
+                        }
+        
+                    })
+        
+</script>

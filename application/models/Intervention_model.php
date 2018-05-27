@@ -27,6 +27,15 @@ class Intervention_model extends CI_Model
         $this->db->order_by('id', 'desc');
         return $this->db->get('intervention')->result_array();
     }
+            /*
+     * Get all intervention
+     */
+    function get_json_intervention()
+    {
+        $this->db->select('description as title , date_heure as start');
+        $this->db->where('active', 1);        
+        return $this->db->get('intervention')->result_array();
+    }
         
         
     /*
