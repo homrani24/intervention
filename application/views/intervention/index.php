@@ -22,7 +22,12 @@
 						<td><?php echo $i['id']; ?></td>
 						<td><?php echo $i['id_company']; ?></td>
 						<td><?php echo $i['date_heure']; ?></td>
-						<td><?php  if($i['active'] == 1) echo 'Active'; else echo 'Non active'; ?></td>
+                        <td><?php  if($i['active'] == 1){ ?>       
+                        <a href="<?php echo site_url('intervention/etat/'.$i['id']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Active</a>       
+                         <?php } else { ?>
+                        <a href="<?php echo site_url('intervention/etat/'.$i['id']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-pencil"></span> Desactive</a>       
+                         <?php } ?></td>
+                        
 						<td><?php echo $i['description']; ?></td>
 						<td>
                             <a href="<?php echo site_url('intervention/edit/'.$i['id']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 

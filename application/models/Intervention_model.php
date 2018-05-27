@@ -57,6 +57,19 @@ class Intervention_model extends CI_Model
         return $this->db->update('intervention',$params);
     }
     
+    function update_active($id)
+    {
+        $this->db->where('id',$id);
+        $this->db->set('active',1);
+        return $this->db->update('intervention');
+    }
+    function update_non_active($id)
+    {
+        $this->db->where('id',$id);
+        $this->db->set('active',0);
+        return $this->db->update('intervention');
+    }
+    
     /*
      * function to delete intervention
      */

@@ -106,6 +106,19 @@ class Intervention extends CI_Controller{
             show_error('The intervention you are trying to edit does not exist.');
     } 
 
+    function etat($id){
+        $etat= $this->Intervention_model->get_intervention($id);
+        if ($etat['active'] == 0){
+            $this->Intervention_model->update_active($id);            
+            redirect('intervention/index');
+
+        }else{
+            $this->Intervention_model->update_non_active($id);            
+            redirect('intervention/index');
+
+        }
+    }
+
     /*
      * Deleting intervention
      */
