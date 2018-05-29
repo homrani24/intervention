@@ -43,7 +43,7 @@ class Intervention_model extends CI_Model
      */
     function get_client_intervention()
     {
-        $this->db->where('id_user',  $this->session->userdata('logged_in')['users_id']);
+        $this->db->where('id_invention',  $this->session->userdata('logged_in')['users_id']);
         $this->db->order_by('active', 'asc');
         return $this->db->get('intervention')->result_array();
     }

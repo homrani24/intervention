@@ -17,4 +17,19 @@ class Dashboard extends CI_Controller{
         $data['_view'] = 'dashboard';
         $this->load->view('layouts/main',$data);
     }
+    
+    function notif()
+    {
+        if($this->session->userdata('logged_in')['role'] == 1 ){
+
+            $this->load->model('Reclamation_model');
+            $data = $this->Reclamation_model->get_all_reclamation();
+        }else{
+            
+            $this->load->model('Intervention_model');
+            $data = $this->Intervention_model->get_client_intervention();
+        }
+        echo count($data);
+    }
+
 }

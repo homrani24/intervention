@@ -27,6 +27,12 @@ class User_model extends CI_Model
         $this->db->order_by('id', 'desc');
         return $this->db->get('user')->result_array();
     }
+    function get_all_invention()
+    {
+        $this->db->where('role', 2);
+        $this->db->order_by('id', 'desc');
+        return $this->db->get('user')->result_array();
+    }
       
         
     /*

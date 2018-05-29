@@ -2,34 +2,18 @@
     <div class="col-md-12">
       	<div class="box box-info">
             <div class="box-header with-border">
-              	<h3 class="box-title">Intervention Add</h3>
+              	<h3 class="box-title">Reclamation Add</h3>
             </div>
-            <?php echo form_open('intervention/add'); ?>
+            <?php echo form_open('reclamation/add'); ?>
           	<div class="box-body">
           		<div class="row clearfix">
-					<div class="col-md-6">
+				  <div class="col-md-6">
 						<label for="id_company" class="control-label">Company</label>
 						<div class="form-group">
 							<select name="id_company" class="form-control">
 								<option value="">select company</option>
 								<?php 
 								foreach($all_company as $company)
-								{
-									$selected = ($company['id'] == $this->input->post('id_company')) ? ' selected="selected"' : "";
-
-									echo '<option value="'.$company['id'].'" '.$selected.'>'.$company['name'].'</option>';
-								} 
-								?>
-							</select>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<label for="id_invention" class="control-label">Intervonant</label>
-						<div class="form-group">
-							<select name="id_invention" class="form-control">
-								<option value="">select </option>
-								<?php 
-								foreach($all_user as $company)
 								{
 									$selected = ($company['id'] == $this->input->post('id_company')) ? ' selected="selected"' : "";
 
@@ -47,10 +31,15 @@
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="description" class="control-label">Description</label>
+						<label for="panne" class="control-label">Panne</label>
 						<div class="form-group">
-							<textarea name="description" class="form-control" id="description"><?php echo $this->input->post('description'); ?></textarea>
-							<span class="text-danger"><?php echo form_error('description');?></span>
+							<input type="text" name="panne" value="<?php echo $this->input->post('panne'); ?>" class="form-control" id="panne" />
+						</div>
+					</div>
+					<div class="col-md-6">
+						<label for="sujet" class="control-label">Sujet</label>
+						<div class="form-group">
+							<textarea name="sujet" class="form-control" id="sujet"><?php echo $this->input->post('sujet'); ?></textarea>
 						</div>
 					</div>
 				</div>

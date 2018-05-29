@@ -126,7 +126,20 @@
                                 </li>
 							</ul>
                         </li>
-                        
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-desktop"></i> <span>Reclamation </span> <span id="reclamation"></span>
+                            </a>
+                            <ul class="treeview-menu">
+								<li class="active">
+                                    <a href="<?php echo site_url('reclamation/add');?>"><i class="fa fa-plus"></i> Add   </a>
+                                </li>
+								<li>
+                                    <a href="<?php echo site_url('reclamation/index');?>"><i class="fa fa-list-ul"></i> Listing</a>
+                                </li>
+							</ul>
+                        </li>
+						<li>
 						<li>
                             <a href="#">
                                 <i class="fa fa-desktop"></i> <span>Intervention</span>
@@ -183,11 +196,11 @@
 
                         <li>
                             <a href="#">
-                                <i class="fa fa-desktop"></i> <span>Intervention</span>
+                                <i class="fa fa-desktop"></i>  <span>Intervention </span><span id="intervention"></span>
                             </a>
                             <ul class="treeview-menu">
 								<li>
-                                    <a href="<?php echo site_url('intervention/index');?>"><i class="fa fa-list-ul"></i> Listing</a>
+                                    <a href="<?php echo site_url('intervention/client_list');?>"><i class="fa fa-list-ul"></i> Listing</a>
                                 </li>
 							</ul>
                         </li>
@@ -205,19 +218,17 @@
                         </li>
 
                         <?php } ?>
-                        
                         <?php if($this->session->userdata('logged_in') ["role"] == 3){ ?>
-
                         <li>
                             <a href="#">
-                                <i class="fa fa-desktop"></i> <span>Intervention</span>
+                                <i class="fa fa-desktop"></i> <span>Reclamation </span>
                             </a>
                             <ul class="treeview-menu">
                                 <li class="active">
-                                    <a href="<?php echo site_url('intervention/add');?>"><i class="fa fa-plus"></i> Add</a>
+                                    <a href="<?php echo site_url('reclamation/add');?>"><i class="fa fa-plus"></i> Add</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo site_url('intervention/client_list');?>"><i class="fa fa-list-ul"></i> Listing</a>
+                                    <a href="<?php echo site_url('reclamation/index_client');?>"><i class="fa fa-list-ul"></i> Listing</a>
                                 </li>
                             </ul>
                         </li>
@@ -284,6 +295,12 @@
         <script src="<?php echo site_url('resources/js/moment.js');?>"></script>
         <script src="<?php echo site_url('resources/js/bootstrap-datetimepicker.min.js');?>"></script>
         <script src="<?php echo site_url('resources/js/global.js');?>"></script>
+        <script >
+        $.get( "/intervention/dashboard/notif", function( data ) {
+        $( "#intervention" ).html( data );
+        $( "#reclamation" ).html( data );
+        });
+        </script>
         
     </body>
 </html>

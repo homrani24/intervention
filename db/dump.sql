@@ -29,9 +29,11 @@ CREATE TABLE `company` (
   `ville` varchar(20) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 /*Data for the table `company` */
+
+insert  into `company`(`id`,`name`,`adresse`,`tel`,`fax`,`ville`,`email`) values (1,'ddfb','dfrgv','551518','55555555555','ggggggggg','dffrgsv@hotmail.com');
 
 /*Table structure for table `contrat` */
 
@@ -58,12 +60,13 @@ CREATE TABLE `intervention` (
   `id_company` int(10) DEFAULT NULL,
   `id_user` int(10) DEFAULT NULL,
   `active` int(1) DEFAULT '0',
+  `id_invention` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 /*Data for the table `intervention` */
 
-insert  into `intervention`(`id`,`date_heure`,`description`,`id_company`,`id_user`,`active`) values (1,'0000-00-00 00:00:00','wcxdc',0,3,0),(2,'0000-00-00 00:00:00','sdfgrgf drer',0,3,0),(3,'2018-05-27 10:51:54','sdfgrgf drer',0,3,0),(4,'2018-05-27 10:51:54','sdfgrgf drer',0,3,0),(5,'2018-05-27 10:51:54','sdfgrgf drer',0,3,0),(6,'2018-05-27 10:51:54','sdfgrgf drer',0,3,1),(7,'2018-05-27 10:51:54','sdfgrgf drer',0,3,1);
+insert  into `intervention`(`id`,`date_heure`,`description`,`id_company`,`id_user`,`active`,`id_invention`) values (1,'0000-00-00 00:00:00','wcxdc',0,3,0,NULL),(2,'0000-00-00 00:00:00','sdfgrgf drer',0,3,0,NULL),(3,'2018-05-27 10:51:54','sdfgrgf drer',0,3,0,NULL),(4,'2018-05-27 10:51:54','sdfgrgf drer',0,3,0,NULL),(5,'2018-05-27 10:51:54','sdfgrgf drer',0,3,0,NULL),(6,'2018-05-27 10:51:54','sdfgrgf drer',0,3,1,2),(7,'2018-05-27 10:51:54','sdfgrgf drer',0,3,1,2),(8,'0000-00-00 00:00:00','fddffv',1,1,0,2);
 
 /*Table structure for table `reclamation` */
 
@@ -74,10 +77,14 @@ CREATE TABLE `reclamation` (
   `date_heure` datetime DEFAULT NULL,
   `sujet` varchar(200) DEFAULT NULL,
   `panne` varchar(500) DEFAULT NULL,
+  `id_company` int(10) DEFAULT NULL,
+  `id_user` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `reclamation` */
+
+insert  into `reclamation`(`id`,`date_heure`,`sujet`,`panne`,`id_company`,`id_user`) values (1,'0000-00-00 00:00:00','drdergzedf','dvffcc',1,3),(2,'2018-05-16 18:11:46','drdergzedf','dvffcc',1,3);
 
 /*Table structure for table `role` */
 
