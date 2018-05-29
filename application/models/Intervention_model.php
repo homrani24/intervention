@@ -36,6 +36,13 @@ class Intervention_model extends CI_Model
         $this->db->where('active', 1);        
         return $this->db->get('intervention')->result_array();
     }
+    function get_json_intervont()
+    {
+        $this->db->select('description as title , date_heure as start');
+        $this->db->where('id_invention',$this->session->userdata('logged_in')['users_id']);        
+        $this->db->where('active', 1);        
+        return $this->db->get('intervention')->result_array();
+    }
         
         
     /*

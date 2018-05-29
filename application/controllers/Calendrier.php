@@ -21,7 +21,10 @@ class Calendrier extends CI_Controller{
         $this->load->view('layouts/main',$data);
     }
     function calendar_json(){
+        if($this->session->userdata('logged_in')['role'] == 1)        
         $data['intervention'] =json_encode( $this->Intervention_model->get_json_intervention());
+        else
+        $data['intervention'] =json_encode( $this->Intervention_model->get_json_intervont());
         echo        $data['intervention'];
     }
 

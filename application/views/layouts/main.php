@@ -218,7 +218,16 @@
                                 </li>
 							</ul>
                         </li>
-
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-desktop"></i> <span>Planing</span>
+                            </a>
+                            <ul class="treeview-menu">
+								<li>
+                                    <a href="<?php echo site_url('Calendrier/index');?>"><i class="fa fa-list-ul"></i> Listing</a>
+                                </li>
+							</ul>
+                        </li>
                         <?php } ?>
                         <?php if($this->session->userdata('logged_in') ["role"] == 3){ ?>
                         <li>
