@@ -36,14 +36,19 @@ class Contrat extends CI_Controller{
             $params = array(
 				'date_deb' => $this->input->post('date_deb'),
 				'date_fin' => $this->input->post('date_fin'),
-				'type' => $this->input->post('type'),
+                'type' => $this->input->post('type'),
+                'id_company' => $this->input->post('id_company'),
+
             );
             
             $contrat_id = $this->Contrat_model->add_contrat($params);
             redirect('contrat/index');
         }
         else
-        {            
+        {          
+            $this->load->model('Company_model');
+			$data['all_company'] = $this->Company_model->get_all_company();
+  
             $data['_view'] = 'contrat/add';
             $this->load->view('layouts/main',$data);
         }
@@ -67,7 +72,8 @@ class Contrat extends CI_Controller{
             {   
                 $params = array(
 					'date_deb' => $this->input->post('date_deb'),
-					'date_fin' => $this->input->post('date_fin'),
+                    'date_fin' => $this->input->post('date_fin'),
+                    'id_company' => $this->input->post('id_company'),
 					'type' => $this->input->post('type'),
                 );
 
@@ -76,6 +82,9 @@ class Contrat extends CI_Controller{
             }
             else
             {
+                $this->load->model('Company_model');
+                $data['all_company'] = $this->Company_model->get_all_company();
+    
                 $data['_view'] = 'contrat/edit';
                 $this->load->view('layouts/main',$data);
             }

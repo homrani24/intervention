@@ -7,6 +7,22 @@
 			<?php echo form_open('contrat/edit/'.$contrat['id']); ?>
 			<div class="box-body">
 				<div class="row clearfix">
+				<div class="col-md-6">
+						<label for="id_company" class="control-label">Company</label>
+						<div class="form-group">
+							<select name="id_company" class="form-control">
+								<option value="">select company</option>
+								<?php 
+								foreach($all_company as $company)
+								{
+									$selected = ($company['id'] == $intervention['id_company']) ? ' selected="selected"' : "";
+
+									echo '<option value="'.$company['id'].'" '.$selected.'>'.$company['name'].'</option>';
+								} 
+								?>
+							</select>
+						</div>
+					</div>
 					<div class="col-md-6">
 						<label for="date_deb" class="control-label">Date Deb</label>
 						<div class="form-group">

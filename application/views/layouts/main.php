@@ -64,7 +64,7 @@
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
                                         <div class="pull-left">
-                                            <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                            <a href="/intervention/user/edit/<?php echo $this->session->userdata('logged_in')['users_id']; ?>" class="btn btn-default btn-flat">Profile</a>
                                         </div>
                                         <div class="pull-right">
                                             <a href="<?php echo site_url('auth/logout');?>" class="btn btn-default btn-flat">Sign out</a>
