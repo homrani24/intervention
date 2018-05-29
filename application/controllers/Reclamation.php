@@ -17,7 +17,7 @@ class Reclamation extends CI_Controller{
     function index()
     {
         $data['reclamation'] = $this->Reclamation_model->get_all_reclamation();
-        
+       
         $data['_view'] = 'reclamation/index';
         $this->load->view('layouts/main',$data);
     }
@@ -25,7 +25,7 @@ class Reclamation extends CI_Controller{
     {
         $data['reclamation'] = $this->Reclamation_model->get_all_client_reclamation($this->session->userdata('logged_in')['users_id']);
         
-        $data['_view'] = 'reclamation/index';
+        $data['_view'] = 'reclamation/index2';
         $this->load->view('layouts/main',$data);
     }
 
@@ -108,5 +108,16 @@ class Reclamation extends CI_Controller{
         else
             show_error('The reclamation you are trying to delete does not exist.');
     }
-    
+    function etat($id){
+        $etat= $this->Reclamation_model->get_reclamation($id);
+        if ($etat['active'] == 0){
+            $this->Reclamation_model->update_active($id);            
+            redirect('reclamation/index');
+
+        }else{
+            $this->Reclamation_model->update_non_active($id);            
+            redirect('reclamation/index');
+
+        }
+    }    
 }

@@ -130,7 +130,7 @@
                         </li>
                         <li>
                             <a href="#">
-                                <i class="fa fa-desktop"></i> <span>Reclamation </span> <span id="reclamation"></span>
+                                <i class="fa fa-desktop"></i> <span>Reclamation </span> (<span id="reclamation"></span>)
                             </a>
                             <ul class="treeview-menu">
 								<li class="active">
@@ -198,7 +198,7 @@
 
                         <li>
                             <a href="#">
-                                <i class="fa fa-desktop"></i>  <span>Intervention </span><span id="intervention"></span>
+                                <i class="fa fa-desktop"></i>  <span>Intervention </span>(<span id="intervention"></span>)
                             </a>
                             <ul class="treeview-menu">
 								<li>

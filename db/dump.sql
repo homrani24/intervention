@@ -44,10 +44,13 @@ CREATE TABLE `contrat` (
   `date_deb` date DEFAULT NULL,
   `date_fin` date DEFAULT NULL,
   `type` varchar(20) DEFAULT NULL,
+  `id_company` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 /*Data for the table `contrat` */
+
+insert  into `contrat`(`id`,`date_deb`,`date_fin`,`type`,`id_company`) values (1,'0000-00-00','0000-00-00','dsdf',1);
 
 /*Table structure for table `intervention` */
 
@@ -79,12 +82,13 @@ CREATE TABLE `reclamation` (
   `panne` varchar(500) DEFAULT NULL,
   `id_company` int(10) DEFAULT NULL,
   `id_user` int(10) DEFAULT NULL,
+  `active` int(1) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `reclamation` */
 
-insert  into `reclamation`(`id`,`date_heure`,`sujet`,`panne`,`id_company`,`id_user`) values (1,'0000-00-00 00:00:00','drdergzedf','dvffcc',1,3),(2,'2018-05-16 18:11:46','drdergzedf','dvffcc',1,3);
+insert  into `reclamation`(`id`,`date_heure`,`sujet`,`panne`,`id_company`,`id_user`,`active`) values (1,'0000-00-00 00:00:00','drdergzedf','dvffcc',1,3,1),(2,'2018-05-16 18:11:46','drdergzedf','dvffcc',1,3,0);
 
 /*Table structure for table `role` */
 

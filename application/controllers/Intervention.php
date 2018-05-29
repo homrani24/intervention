@@ -17,7 +17,7 @@ class Intervention extends CI_Controller{
     function index()
     {
         $data['intervention'] = $this->Intervention_model->get_all_intervention();
-        if($this->session->userdata('logged_in')['users_id'] == 3)        
+        if($this->session->userdata('logged_in')['role'] == 3)        
         $data['_view'] = 'intervention/index2';
         else
         $data['_view'] = 'intervention/index';

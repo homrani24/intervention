@@ -59,4 +59,16 @@ class Reclamation_model extends CI_Model
     {
         return $this->db->delete('reclamation',array('id'=>$id));
     }
+    function update_active($id)
+    {
+        $this->db->where('id',$id);
+        $this->db->set('active',1);
+        return $this->db->update('reclamation');
+    }
+    function update_non_active($id)
+    {
+        $this->db->where('id',$id);
+        $this->db->set('active',0);
+        return $this->db->update('reclamation');
+    }
 }
