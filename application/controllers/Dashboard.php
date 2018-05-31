@@ -38,7 +38,9 @@ class Dashboard extends CI_Controller{
         $pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
         $pdf->SetTitle('My Title');
         $pdf->AddPage();
-        $html='<table style="width:100%" border="1">
+        $html='
+        <h1>Contrat pdf</h1>
+        <table style="width:100%" border="1">
         <tr>
           <th>type</th>
           <th>date de début</th> 

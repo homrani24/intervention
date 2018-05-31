@@ -41,8 +41,8 @@ DROP TABLE IF EXISTS `contrat`;
 
 CREATE TABLE `contrat` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `date_deb` date DEFAULT NULL,
-  `date_fin` date DEFAULT NULL,
+  `date_deb` varchar(50) DEFAULT NULL,
+  `date_fin` varchar(50) DEFAULT NULL,
   `type` varchar(20) DEFAULT NULL,
   `id_company` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -58,7 +58,7 @@ DROP TABLE IF EXISTS `intervention`;
 
 CREATE TABLE `intervention` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `date_heure` datetime DEFAULT NULL,
+  `date_heure` varchar(50) DEFAULT NULL,
   `description` varchar(500) DEFAULT NULL,
   `id_company` int(10) DEFAULT NULL,
   `id_user` int(10) DEFAULT NULL,
@@ -77,7 +77,7 @@ DROP TABLE IF EXISTS `reclamation`;
 
 CREATE TABLE `reclamation` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `date_heure` datetime DEFAULT NULL,
+  `date_heure` varchar(50) DEFAULT NULL,
   `sujet` varchar(200) DEFAULT NULL,
   `panne` varchar(500) DEFAULT NULL,
   `id_company` int(10) DEFAULT NULL,
