@@ -19,6 +19,16 @@ class Contrat_model extends CI_Model
         return $this->db->get_where('contrat',array('id'=>$id))->row_array();
     }
         
+     
+    function get_contrat_societer($id)
+    {
+        $this->db->join('company', ' contrat.id_company= company.id');
+
+        $this->db->where('contrat.id',$id);        
+        return $this->db->get('contrat')->row_array();
+        
+    }
+        
     /*
      * Get all contrat
      */

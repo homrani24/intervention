@@ -31,5 +31,32 @@ class Dashboard extends CI_Controller{
         }
         echo count($data);
     }
+    function generate_pdf($id){
+        $this->load->model('Contrat_model');
+        $data = $this->Contrat_model->get_contrat_societer($id);
+        $this->load->library('Pdf');
+        $pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
+        $pdf->SetTitle('My Title');
+        $pdf->AddPage();
+        $html='<table style="width:100%" border="1">
+        <tr>
+          <th>type</th>
+          <th>date de début</th> 
+          <th>date de fin</th>
+          <th>societer</th>
+        </tr>
+        <tr>
+        <td>'.$data['type'].'</td>
+          <td>'.$data['date_deb'].'</td>
+          <td>'.$data['date_fin'].'</td>
+          <td>'.$data['name'].'</td>
+        </tr>
+
+      </table>
+      ';
+        $pdf->writeHTML($html);
+        $pdf->Output('name.pdf', 'D');
+
+    }
 
 }

@@ -14,6 +14,7 @@
 						<th>Date Deb</th>
 						<th>Date Fin</th>
 						<th>Type</th>
+						<th>Télécharger</th>
 						<th>Actions</th>
                     </tr>
                     <?php foreach($contrat as $c){ ?>
@@ -22,6 +23,10 @@
 						<td><?php echo $c['date_deb']; ?></td>
 						<td><?php echo $c['date_fin']; ?></td>
 						<td><?php echo $c['type']; ?></td>
+						<td>
+                        <a href="<?php echo site_url('Dashboard/generate_pdf/'.$c['id']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Télécharger</a>       
+
+                        </td>
 						<td>
                             <a href="<?php echo site_url('contrat/edit/'.$c['id']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
                             <a href="<?php echo site_url('contrat/remove/'.$c['id']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
