@@ -33,6 +33,28 @@ class Reclamation_model extends CI_Model
         $this->db->order_by('id', 'desc');
         return $this->db->get('reclamation')->result_array();
     }
+    function get_info_ajax()
+    {
+        if($this->session->userdata('logged_in')['role'] == 1 ){
+            $this->db->select('sujet as title');      
+            return $this->db->get('reclamation')->result_array();
+
+        }
+        if($this->session->userdata('logged_in')['role'] == 2 ){
+        $this->db->select('description as title');
+        $this->db->where('id_invention',$this->session->userdata('logged_in')['users_id']);        
+        $this->db->where('active', 1);            
+        return $this->db->get('intervention')->result_array();
+        }
+        if($this->session->userdata('logged_in')['role'] == 3 ){
+            $this->db->select('sujet as title');      
+ 
+            $this->db->where('id_user', $this->session->userdata('logged_in')['users_id']);
+            $this->db->order_by('id', 'desc');
+            return $this->db->get('reclamation')->result_array();
+    
+        }
+    }
         
     /*
      * function to add new reclamation

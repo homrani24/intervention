@@ -20,16 +20,10 @@ class Dashboard extends CI_Controller{
     
     function notif()
     {
-        if($this->session->userdata('logged_in')['role'] == 1 ){
 
             $this->load->model('Reclamation_model');
-            $data = $this->Reclamation_model->get_all_reclamation();
-        }else{
-            
-            $this->load->model('Intervention_model');
-            $data = $this->Intervention_model->get_client_intervention();
-        }
-        echo count($data);
+            $data = $this->Reclamation_model->get_info_ajax();
+        echo json_encode($data);
     }
     function generate_pdf($id){
         $this->load->model('Contrat_model');

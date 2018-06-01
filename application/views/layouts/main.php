@@ -46,6 +46,23 @@
                     <div class="navbar-custom-menu">
                         <ul class="nav navbar-nav">
                         <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu" id="header_inbox_bar">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" aria-expanded="true">
+                                <i class="icon-envelope-open"></i>
+                                <span class="badge badge-default">  </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="external">
+                                    <h3 style="text-align:center;">Notifications</h3>
+                                    <a href="app_inbox.html" style="text-align:center;">view all</a>
+                                </li>
+                                <li>
+                                        <ul class="dropdown-menu-list scroller" id="append" >
+
+                                        </ul>
+                                </li>
+                            </ul>
+                        </li>
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <img src="<?php echo site_url('resources/img/user2-160x160.jpg');?>" class="user-image" alt="User Image">
@@ -130,7 +147,7 @@
                         </li>
                         <li>
                             <a href="#">
-                                <i class="fa fa-desktop"></i> <span>Reclamation </span> (<span id="reclamation"></span>)
+                                <i class="fa fa-desktop"></i> <span>Reclamation </span> 
                             </a>
                             <ul class="treeview-menu">
 								<li class="active">
@@ -198,7 +215,7 @@
 
                         <li>
                             <a href="#">
-                                <i class="fa fa-desktop"></i>  <span>Intervention </span>(<span id="intervention"></span>)
+                                <i class="fa fa-desktop"></i>  <span>Intervention </span>
                             </a>
                             <ul class="treeview-menu">
 								<li>
@@ -309,7 +326,13 @@
         <script >
         $.get( "/intervention/dashboard/notif", function( data ) {
         $( "#intervention" ).html( data );
-        $( "#reclamation" ).html( data );
+        var jsonData = JSON.parse(data);
+        var total=jsonData.length;
+        $('.badge').html(total);
+for (var i = 0; i < jsonData.length; i++) {
+    var counter = jsonData[i].title;    
+    $( "#append" ).append( '<li><a href="#"><span class="time">'+counter+' </span></span><br></a></li>' );
+}
         });
         </script>
         
