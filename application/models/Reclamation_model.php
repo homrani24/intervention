@@ -68,6 +68,16 @@ class Reclamation_model extends CI_Model
     /*
      * function to update reclamation
      */
+    function reclamation_sociter() {
+        
+        $this->db->select('company.name, COUNT(reclamation.id) as total');
+        $this->db->join('reclamation', ' company.id= reclamation.id_company');
+
+        $this->db->group_by('company.id'); 
+            return $this->db->get('company')->result_array();
+               
+               
+    }
     function update_reclamation($id,$params)
     {
         $this->db->where('id',$id);

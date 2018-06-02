@@ -14,6 +14,11 @@ class Dashboard extends CI_Controller{
 
     function index()
     {
+        
+        $this->load->model('Reclamation_model');        
+        $data['reclamations'] = $this->Reclamation_model->reclamation_sociter();
+        $this->load->model('User_model');        
+        $data['users'] = $this->User_model->user_number();
         $data['_view'] = 'dashboard';
         $this->load->view('layouts/main',$data);
     }

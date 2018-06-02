@@ -18,7 +18,16 @@ class User_model extends CI_Model
     {
         return $this->db->get_where('user',array('id'=>$id))->row_array();
     }
+    function user_number() {
         
+        $this->db->select('COUNT(user.id) as total , role.id');
+        $this->db->join('role', ' user.role= role.id');
+
+        $this->db->group_by('role.name'); 
+            return $this->db->get('user')->result_array();
+               
+               
+    }
     /*
      * Get all user
      */

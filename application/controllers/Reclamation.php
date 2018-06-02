@@ -29,6 +29,14 @@ class Reclamation extends CI_Controller{
         $this->load->view('layouts/main',$data);
     }
 
+
+    function index_test()
+    {
+        $data['reclamation'] = $this->Reclamation_model->reclamation_sociter();
+        die(var_dump($data['reclamation']));
+        $data['_view'] = 'reclamation/index2';
+        $this->load->view('layouts/main',$data);
+    }
     /*
      * Adding a new reclamation
      */
