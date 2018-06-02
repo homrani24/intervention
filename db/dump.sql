@@ -29,11 +29,11 @@ CREATE TABLE `company` (
   `ville` varchar(20) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `company` */
 
-insert  into `company`(`id`,`name`,`adresse`,`tel`,`fax`,`ville`,`email`) values (1,'ddfb','dfrgv','551518','55555555555','ggggggggg','dffrgsv@hotmail.com');
+insert  into `company`(`id`,`name`,`adresse`,`tel`,`fax`,`ville`,`email`) values (1,'ddfb','dfrgv','551518','55555555555','ggggggggg','dffrgsv@hotmail.com'),(2,'ddfb','dfrgv','551518','55555555555','ggggggggg','dffrgsv@hotmail.com');
 
 /*Table structure for table `contrat` */
 
@@ -84,11 +84,11 @@ CREATE TABLE `reclamation` (
   `id_user` int(10) DEFAULT NULL,
   `active` int(1) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 /*Data for the table `reclamation` */
 
-insert  into `reclamation`(`id`,`date_heure`,`sujet`,`panne`,`id_company`,`id_user`,`active`) values (1,'0000-00-00 00:00:00','drdergzedf','dvffcc',1,3,1),(2,'2018-05-16 18:11:46','drdergzedf','dvffcc',1,3,0);
+insert  into `reclamation`(`id`,`date_heure`,`sujet`,`panne`,`id_company`,`id_user`,`active`) values (1,'0000-00-00 00:00:00','drdergzedf','dvffcc',1,3,1),(2,'2018-05-16 18:11:46','drdergzedf','dvffcc',1,3,0),(3,'0000-00-00 00:00:00','drdergzedf','dvffcc',2,3,1),(4,'0000-00-00 00:00:00','drdergzedf','dvffcc',2,3,1),(5,'0000-00-00 00:00:00','drdergzedf','dvffcc',2,3,1),(6,'0000-00-00 00:00:00','drdergzedf','dvffcc',1,3,1);
 
 /*Table structure for table `role` */
 
@@ -119,11 +119,11 @@ CREATE TABLE `user` (
   `update_at` datetime DEFAULT NULL,
   `statut` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 /*Data for the table `user` */
 
-insert  into `user`(`id`,`email`,`password`,`name`,`mobile`,`role`,`created_at`,`update_at`,`statut`) values (1,'homrani@hotmail.com','sniper99','mouh','55622525',1,'2018-05-26 13:13:17','2018-05-26 13:13:25',0),(2,'homrani2@hotmail.com','sniper99','mouh','55622525',2,'2018-05-26 13:13:17','2018-05-26 13:13:25',0),(3,'client@exemple.com','client','dali','22255447',3,'2018-05-26 01:35:03','2018-05-26 01:38:47',0);
+insert  into `user`(`id`,`email`,`password`,`name`,`mobile`,`role`,`created_at`,`update_at`,`statut`) values (1,'homrani@hotmail.com','sniper99','mouh','55622525',1,'2018-05-26 13:13:17','2018-05-26 13:13:25',0),(2,'homrani2@hotmail.com','sniper99','mouh','55622525',2,'2018-05-26 13:13:17','2018-05-26 13:13:25',0),(3,'client@exemple.com','client','dali','22255447',3,'2018-05-26 01:35:03','2018-05-26 01:38:47',0),(4,'client@exemple.com','client','dali','22255447',3,'2018-05-26 01:35:03','2018-05-26 01:38:47',0);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
