@@ -212,7 +212,7 @@
                         </li>
                         <?php } ?>
                         <?php if($this->session->userdata('logged_in') ["role"] == 2){ ?>
-
+                            
                         <li>
                             <a href="#">
                                 <i class="fa fa-desktop"></i>  <span>Intervention </span>
@@ -266,6 +266,13 @@
                 </section>
                 <!-- /.sidebar -->
             </aside>
+            <?php if($this->session->userdata('logged_in') ["role"] == 2){ ?>
+            <input type="hidden" id="url" value="http://localhost/intervention/intervention/">
+            <?php } else if($this->session->userdata('logged_in') ["role"] == 3){ ?>
+            <input type="hidden" id="url" value="http://localhost/intervention/reclamation/index_client">
+            <?php } else { ?>
+            <input type="hidden" id="url" value="http://localhost/intervention/reclamation/">
+            <?php } ?>
 
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
@@ -329,10 +336,11 @@
         var jsonData = JSON.parse(data);
         var total=jsonData.length;
         $('.badge').html(total);
-for (var i = 0; i < jsonData.length; i++) {
-    var counter = jsonData[i].title;    
-    $( "#append" ).append( '<li><a href="#"><span class="time">'+counter+' </span></span><br></a></li>' );
-}
+        var url=$('#url').val();
+        for (var i = 0; i < jsonData.length; i++) {
+            var counter = jsonData[i].title;    
+            $( "#append" ).append( '<li><a href="'+url+'"><span class="time"> le chef d\'équipe a accepter votre demande '+counter+' </span></span><br></a></li>' );
+        }
         });
         </script>
         
