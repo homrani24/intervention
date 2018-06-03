@@ -24,6 +24,38 @@
 						</div>
 					</div>
 					<div class="col-md-6">
+						<label for="id_invention" class="control-label">Intervenant</label>
+						<div class="form-group">
+							<select name="id_invention" class="form-control">
+								<option value="">sélectionnez intervenant </option>
+								<?php 
+								foreach($all_user as $company)
+								{
+									$selected = ($company['id'] == $this->input->post('id_company')) ? ' selected="selected"' : "";
+
+									echo '<option value="'.$company['id'].'" '.$selected.'>'.$company['name'].'</option>';
+								} 
+								?>
+							</select>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<label for="id_invention" class="control-label">Client</label>
+						<div class="form-group">
+							<select name="id_client" class="form-control">
+								<option value="">sélectionnez client </option>
+								<?php 
+								foreach($all_clients as $company)
+								{
+									$selected = ($company['id'] == $this->input->post('id_company')) ? ' selected="selected"' : "";
+
+									echo '<option value="'.$company['id'].'" '.$selected.'>'.$company['name'].'</option>';
+								} 
+								?>
+							</select>
+						</div>
+					</div>
+					<div class="col-md-6">
 						<label for="date_heure" class="control-label">Date Heure</label>
 						<div class="form-group">
 							<input type="text" name="date_heure" value="<?php echo ($this->input->post('date_heure') ? $this->input->post('date_heure') : $intervention['date_heure']); ?>" class="has-datetimepicker form-control" id="date_heure" />

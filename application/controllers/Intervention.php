@@ -17,7 +17,7 @@ class Intervention extends CI_Controller{
     function index()
     {
         $data['intervention'] = $this->Intervention_model->get_all_intervention();
-        if($this->session->userdata('logged_in')['role'] == 3)        
+        if($this->session->userdata('logged_in')['role'] == 2)        
         $data['_view'] = 'intervention/index2';
         else
         $data['_view'] = 'intervention/index';
@@ -29,7 +29,6 @@ class Intervention extends CI_Controller{
     function client_list()
     {
         $data['intervention'] = $this->Intervention_model->get_client_intervention();
-        
         $data['_view'] = 'intervention/index2';
         $this->load->view('layouts/main',$data);
     }
@@ -50,6 +49,7 @@ class Intervention extends CI_Controller{
 				'date_heure' => $this->input->post('date_heure'),
 				'description' => $this->input->post('description'),
 				'id_invention' => $this->input->post('id_invention'),
+				'id_client' => $this->input->post('id_client'),
 				'id_user' => $this->session->userdata('logged_in')['users_id'],
             );
             
@@ -63,8 +63,10 @@ class Intervention extends CI_Controller{
         {
 			$this->load->model('Company_model');
 			$data['all_company'] = $this->Company_model->get_all_company();
-        	$this->load->model('User_model');
-			$data['all_user'] = $this->User_model->get_all_invention();
+            $this->load->model('User_model');
+            $data['all_user'] = $this->User_model->get_all_invention(2);
+            $this->load->model('User_model');
+            $data['all_clients'] = $this->User_model->get_all_invention(3);
             
             $data['_view'] = 'intervention/add';
             $this->load->view('layouts/main',$data);
@@ -90,7 +92,9 @@ class Intervention extends CI_Controller{
                 $params = array(
 					'id_company' => $this->input->post('id_company'),
                     'date_heure' => $this->input->post('date_heure'),
-    				'id_invention' => $this->input->post('id_invention'),                    
+                    'id_invention' => $this->input->post('id_invention'),
+    				'id_client' => $this->input->post('id_client'),
+    				'id_company' => $this->input->post('id_company'),         
 					'description' => $this->input->post('description'),
                 );
 
@@ -102,7 +106,9 @@ class Intervention extends CI_Controller{
 				$this->load->model('Company_model');
 				$data['all_company'] = $this->Company_model->get_all_company();
                 $this->load->model('User_model');
-                $data['all_user'] = $this->User_model->get_all_invention();
+                $data['all_user'] = $this->User_model->get_all_invention(2);
+                $this->load->model('User_model');
+                $data['all_clients'] = $this->User_model->get_all_invention(3);
                 
                 $data['_view'] = 'intervention/edit';
                 $this->load->view('layouts/main',$data);

@@ -39,6 +39,22 @@
 							</select>
 						</div>
 					</div>
+					<div class="col-md-6">
+						<label for="id_invention" class="control-label">Client</label>
+						<div class="form-group">
+							<select name="id_client" class="form-control">
+								<option value="">sélectionnez client </option>
+								<?php 
+								foreach($all_clients as $company)
+								{
+									$selected = ($company['id'] == $this->input->post('id_company')) ? ' selected="selected"' : "";
+
+									echo '<option value="'.$company['id'].'" '.$selected.'>'.$company['name'].'</option>';
+								} 
+								?>
+							</select>
+						</div>
+					</div>
 
 					<div class="col-md-6">
 						<label for="date_heure" class="control-label">Date Heure</label>

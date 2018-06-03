@@ -50,7 +50,10 @@ class Intervention_model extends CI_Model
      */
     function get_client_intervention()
     {
+        if(  $this->session->userdata('logged_in')['role'] == 2)
         $this->db->where('id_invention',  $this->session->userdata('logged_in')['users_id']);
+        else
+        $this->db->where('id_client',  $this->session->userdata('logged_in')['users_id']);
         $this->db->order_by('active', 'asc');
         return $this->db->get('intervention')->result_array();
     }

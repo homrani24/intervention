@@ -256,6 +256,17 @@
                                 </li>
                             </ul>
                         </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-desktop"></i>  <span>Intervention </span>
+                            </a>
+                            <ul class="treeview-menu">
+								<li>
+                                    <a href="<?php echo site_url('intervention/client_list');?>"><i class="fa fa-list-ul"></i> Liste</a>
+                                </li>
+							</ul>
+                        </li>
+                        
                         <?php } ?>
 
                     </ul>
@@ -264,9 +275,12 @@
             </aside>
             <?php if($this->session->userdata('logged_in') ["role"] == 2){ ?>
             <input type="hidden" id="url" value="http://localhost/intervention/intervention/">
+            <input type="hidden" id="text_notif" value="Le chef de projet envoyer un intervention">
             <?php } else if($this->session->userdata('logged_in') ["role"] == 3){ ?>
+            <input type="hidden" id="text_notif" value="Le chef de projet  a accepter une réclamation">
             <input type="hidden" id="url" value="http://localhost/intervention/reclamation/index_client">
             <?php } else { ?>
+            <input type="hidden" id="text_notif" value="Le client a envoyer une réclamation">
             <input type="hidden" id="url" value="http://localhost/intervention/reclamation/">
             <?php } ?>
 
@@ -331,9 +345,10 @@
         var total=jsonData.length;
         $('.badge').html(total);
         var url=$('#url').val();
+        var text_notif=$('#text_notif').val();
         for (var i = 0; i < jsonData.length; i++) {
             var counter = jsonData[i].title;    
-            $( "#append" ).append( '<li><a href="'+url+'"><span class="time"> le chef d\'équipe a accepter votre demande '+counter+' </span></span><br></a></li>' );
+            $( "#append" ).append( '<li><a href="'+url+'"><span class="time"> '+text_notif+' '+counter+' </span></span><br></a></li>' );
         }
         });
         </script>
