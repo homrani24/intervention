@@ -2,19 +2,19 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Intervention Listing</h3>
+                <h3 class="box-title"> Liste des Interventions</h3>
             	<div class="box-tools">
-                    <a href="<?php echo site_url('intervention/add'); ?>" class="btn btn-success btn-sm">Add</a> 
+                    <a href="<?php echo site_url('intervention/add'); ?>" class="btn btn-success btn-sm">Ajouter</a> 
                 </div>
             </div>
             <div class="box-body">
                 <table class="table table-striped">
                     <tr>
 						<th>ID</th>
-						<th>Id Company</th>
+						<th>Id société</th>
 						<th>Date Heure</th>
 						<th>Description</th>
-						<th>état</th>
+						<th>Etat</th>
 						<th>Actions</th>
                     </tr>
                     <?php foreach($intervention as $i){ ?>

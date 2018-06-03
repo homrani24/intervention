@@ -2,16 +2,16 @@
     <div class="col-md-12">
       	<div class="box box-info">
             <div class="box-header with-border">
-              	<h3 class="box-title">Reclamation Add</h3>
+              	<h3 class="box-title">Ajouter Reclamation </h3>
             </div>
             <?php echo form_open('reclamation/add'); ?>
           	<div class="box-body">
           		<div class="row clearfix">
 				  <div class="col-md-6">
-						<label for="id_company" class="control-label">Company</label>
+						<label for="id_company" class="control-label">société</label>
 						<div class="form-group">
 							<select name="id_company" class="form-control">
-								<option value="">select company</option>
+								<option value=""> sélectionnez la société</option>
 								<?php 
 								foreach($all_company as $company)
 								{
@@ -46,7 +46,7 @@
 			</div>
           	<div class="box-footer">
             	<button type="submit" class="btn btn-success">
-            		<i class="fa fa-check"></i> Save
+            		<i class="fa fa-check"></i> Envoyer
             	</button>
           	</div>
             <?php echo form_close(); ?>

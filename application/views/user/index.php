@@ -2,9 +2,9 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">User Listing</h3>
+                <h3 class="box-title">Liste des utilisateur</h3>
             	<div class="box-tools">
-                    <a href="<?php echo site_url('user/add'); ?>" class="btn btn-success btn-sm">Add</a> 
+                    <a href="<?php echo site_url('user/add'); ?>" class="btn btn-success btn-sm">Ajouter</a> 
                 </div>
             </div>
             <div class="box-body">
@@ -13,8 +13,8 @@
 						<th>ID</th>
 						<th>Role</th>
 						<th>Email</th>
-						<th>Name</th>
-						<th>Mobile</th>
+						<th>Nom</th>
+						<th>Téléphone</th>
 						<th>Actions</th>
                     </tr>
                     <?php foreach($user as $u){ ?>

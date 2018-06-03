@@ -2,16 +2,16 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Company Listing</h3>
+                <h3 class="box-title">Liste des sociète  </h3>
             	<div class="box-tools">
-                    <a href="<?php echo site_url('company/add'); ?>" class="btn btn-success btn-sm">Add</a> 
+                    <a href="<?php echo site_url('company/add'); ?>" class="btn btn-success btn-sm">Ajouter</a> 
                 </div>
             </div>
             <div class="box-body">
                 <table class="table table-striped">
                     <tr>
 						<th>ID</th>
-						<th>Name</th>
+						<th>Nom</th>
 						<th>Tel</th>
 						<th>Fax</th>
 						<th>Ville</th>

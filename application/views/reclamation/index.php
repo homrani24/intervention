@@ -2,9 +2,9 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Reclamation Listing</h3>
+                <h3 class="box-title">Liste des Reclamations</h3>
             	<div class="box-tools">
-                    <a href="<?php echo site_url('reclamation/add'); ?>" class="btn btn-success btn-sm">Add</a> 
+                    <a href="<?php echo site_url('reclamation/add'); ?>" class="btn btn-success btn-sm">Ajouter</a> 
                 </div>
             </div>
             <div class="box-body">
@@ -14,7 +14,7 @@
 						<th>Date Heure</th>
 						<th>Panne</th>
 						<th>Sujet</th>
-						<th>etat</th>
+						<th>Etat</th>
 						<th>Actions</th>
                     </tr>
                     <?php foreach($reclamation as $r){ ?>

@@ -40,15 +40,15 @@
         ["Element", "user", { role: "style" } ],
         <?php foreach($users as $u){
            if($u['id'] == 1) {?>
-        ["chef du projet", <?php echo $u['total']; ?>, "gold"],
+        ["Chef du projet", <?php echo $u['total']; ?>, "gold"],
             
             <?php } ?>
             <?php if($u['id'] == 2){?>
-        ["itervonant", <?php echo $u['total']; ?>, "#b87333"],
+        ["Intervenant", <?php echo $u['total']; ?>, "#b87333"],
             
             <?php } ?>
             <?php if($u['id'] == 3){?>
-        ["client", <?php echo $u['total']; ?>, "#silver"],
+        ["Client", <?php echo $u['total']; ?>, "#silver"],
             
             <?php } ?>
         <?php } ?>

@@ -54,7 +54,6 @@
                             <ul class="dropdown-menu">
                                 <li class="external">
                                     <h3 style="text-align:center;">Notifications</h3>
-                                    <a href="app_inbox.html" style="text-align:center;">view all</a>
                                 </li>
                                 <li>
                                         <ul class="dropdown-menu-list scroller" id="append" >
@@ -74,10 +73,7 @@
                                     <li class="user-header">
                                         <img src="<?php echo site_url('resources/img/user2-160x160.jpg');?>" class="img-circle" alt="User Image">
 
-                                    <p>
-                                    <?php echo $this->session->userdata('logged_in')['first_name']; ?>
-                                        <small>Member since Nov. 2012</small>
-                                    </p>
+                                   
                                     </li>
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
@@ -85,7 +81,7 @@
                                             <a href="/intervention/user/edit/<?php echo $this->session->userdata('logged_in')['users_id']; ?>" class="btn btn-default btn-flat">Profile</a>
                                         </div>
                                         <div class="pull-right">
-                                            <a href="<?php echo site_url('auth/logout');?>" class="btn btn-default btn-flat">Sign out</a>
+                                            <a href="<?php echo site_url('auth/logout');?>" class="btn btn-default btn-flat">Déconnexion</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -106,7 +102,7 @@
                         <div class="pull-left info">
                         <?php echo $this->session->userdata('logged_in')['first_name']; ?>
                             <p></p>
-                            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                            <a href="#"><i class="fa fa-circle text-success"></i> En ligne</a>
                         </div>
                     </div>
                     <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -116,19 +112,19 @@
                         <li class="header">MAIN NAVIGATION</li>
                         <li>
                             <a href="<?php echo site_url();?>">
-                                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                                <i class="fa fa-dashboard"></i> <span>Tableau de bord</span>
                             </a>
                         </li>
 						<li>
                             <a href="#">
-                                <i class="fa fa-desktop"></i> <span>Company</span>
+                                <i class="fa fa-desktop"></i> <span>Société</span>
                             </a>
                             <ul class="treeview-menu">
 								<li class="active">
-                                    <a href="<?php echo site_url('company/add');?>"><i class="fa fa-plus"></i> Add</a>
+                                    <a href="<?php echo site_url('company/add');?>"><i class="fa fa-plus"></i> Ajouter</a>
                                 </li>
 								<li>
-                                    <a href="<?php echo site_url('company/index');?>"><i class="fa fa-list-ul"></i> Listing</a>
+                                    <a href="<?php echo site_url('company/index');?>"><i class="fa fa-list-ul"></i>Liste</a>
                                 </li>
 							</ul>
                         </li>
@@ -138,10 +134,10 @@
                             </a>
                             <ul class="treeview-menu">
 								<li class="active">
-                                    <a href="<?php echo site_url('contrat/add');?>"><i class="fa fa-plus"></i> Add</a>
+                                    <a href="<?php echo site_url('contrat/add');?>"><i class="fa fa-plus"></i> Ajouter</a>
                                 </li>
 								<li>
-                                    <a href="<?php echo site_url('contrat/index');?>"><i class="fa fa-list-ul"></i> Listing</a>
+                                    <a href="<?php echo site_url('contrat/index');?>"><i class="fa fa-list-ul"></i> Liste</a>
                                 </li>
 							</ul>
                         </li>
@@ -151,10 +147,10 @@
                             </a>
                             <ul class="treeview-menu">
 								<li class="active">
-                                    <a href="<?php echo site_url('reclamation/add');?>"><i class="fa fa-plus"></i> Add   </a>
+                                    <a href="<?php echo site_url('reclamation/add');?>"><i class="fa fa-plus"></i> Ajouter   </a>
                                 </li>
 								<li>
-                                    <a href="<?php echo site_url('reclamation/index');?>"><i class="fa fa-list-ul"></i> Listing</a>
+                                    <a href="<?php echo site_url('reclamation/index');?>"><i class="fa fa-list-ul"></i> Liste</a>
                                 </li>
 							</ul>
                         </li>
@@ -165,10 +161,10 @@
                             </a>
                             <ul class="treeview-menu">
 								<li class="active">
-                                    <a href="<?php echo site_url('intervention/add');?>"><i class="fa fa-plus"></i> Add</a>
+                                    <a href="<?php echo site_url('intervention/add');?>"><i class="fa fa-plus"></i> Ajouter</a>
                                 </li>
 								<li>
-                                    <a href="<?php echo site_url('intervention/index');?>"><i class="fa fa-list-ul"></i> Listing</a>
+                                    <a href="<?php echo site_url('intervention/index');?>"><i class="fa fa-list-ul"></i> Liste</a>
                                 </li>
 							</ul>
                         </li>
@@ -176,14 +172,14 @@
 					
 						<li>
                             <a href="#">
-                                <i class="fa fa-desktop"></i> <span>User</span>
+                                <i class="fa fa-desktop"></i> <span>Utilisateur</span>
                             </a>
                             <ul class="treeview-menu">
 								<li class="active">
-                                    <a href="<?php echo site_url('user/add');?>"><i class="fa fa-plus"></i> Add</a>
+                                    <a href="<?php echo site_url('user/add');?>"><i class="fa fa-plus"></i> Ajouter</a>
                                 </li>
 								<li>
-                                    <a href="<?php echo site_url('user/index');?>"><i class="fa fa-list-ul"></i> Listing</a>
+                                    <a href="<?php echo site_url('user/index');?>"><i class="fa fa-list-ul"></i> Liste</a>
                                 </li>
 							</ul>
                         </li>
@@ -193,20 +189,20 @@
                             </a>
                             <ul class="treeview-menu">
 								<li class="active">
-                                    <a href="<?php echo site_url('role/add');?>"><i class="fa fa-plus"></i> Add</a>
+                                    <a href="<?php echo site_url('role/add');?>"><i class="fa fa-plus"></i> Ajouter</a>
                                 </li>
 								<li>
-                                    <a href="<?php echo site_url('role/index');?>"><i class="fa fa-list-ul"></i> Listing</a>
+                                    <a href="<?php echo site_url('role/index');?>"><i class="fa fa-list-ul"></i> Liste</a>
                                 </li>
 							</ul>
                         </li>
                         <li>
                             <a href="#">
-                                <i class="fa fa-desktop"></i> <span>Planing</span>
+                                <i class="fa fa-desktop"></i> <span>Calendrier</span>
                             </a>
                             <ul class="treeview-menu">
 								<li>
-                                    <a href="<?php echo site_url('Calendrier/index');?>"><i class="fa fa-list-ul"></i> Listing</a>
+                                    <a href="<?php echo site_url('Calendrier/index');?>"><i class="fa fa-list-ul"></i> Liste</a>
                                 </li>
 							</ul>
                         </li>
@@ -219,7 +215,7 @@
                             </a>
                             <ul class="treeview-menu">
 								<li>
-                                    <a href="<?php echo site_url('intervention/client_list');?>"><i class="fa fa-list-ul"></i> Listing</a>
+                                    <a href="<?php echo site_url('intervention/client_list');?>"><i class="fa fa-list-ul"></i> Liste</a>
                                 </li>
 							</ul>
                         </li>
@@ -231,17 +227,17 @@
                             </a>
                             <ul class="treeview-menu">
 								<li>
-                                    <a href="<?php echo site_url('user/client');?>"><i class="fa fa-list-ul"></i> Listing</a>
+                                    <a href="<?php echo site_url('user/client');?>"><i class="fa fa-list-ul"></i> Liste</a>
                                 </li>
 							</ul>
                         </li>
                         <li>
                             <a href="#">
-                                <i class="fa fa-desktop"></i> <span>Planing</span>
+                                <i class="fa fa-desktop"></i> <span>Calendrier</span>
                             </a>
                             <ul class="treeview-menu">
 								<li>
-                                    <a href="<?php echo site_url('Calendrier/index');?>"><i class="fa fa-list-ul"></i> Listing</a>
+                                    <a href="<?php echo site_url('Calendrier/index');?>"><i class="fa fa-list-ul"></i> Liste</a>
                                 </li>
 							</ul>
                         </li>
@@ -253,10 +249,10 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li class="active">
-                                    <a href="<?php echo site_url('reclamation/add');?>"><i class="fa fa-plus"></i> Add</a>
+                                    <a href="<?php echo site_url('reclamation/add');?>"><i class="fa fa-plus"></i> Ajouter</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo site_url('reclamation/index_client');?>"><i class="fa fa-list-ul"></i> Listing</a>
+                                    <a href="<?php echo site_url('reclamation/index_client');?>"><i class="fa fa-list-ul"></i> Liste</a>
                                 </li>
                             </ul>
                         </li>
@@ -286,9 +282,7 @@
                 <!-- /.content -->
             </div>
             <!-- /.content-wrapper -->
-            <footer class="main-footer">
-                <strong>Generated By <a href="http://www.crudigniter.com/">CRUDigniter</a> 3.2</strong>
-            </footer>
+           
 
             <!-- Control Sidebar -->
             <aside class="control-sidebar control-sidebar-dark">

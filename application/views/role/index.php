@@ -2,7 +2,7 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Role Listing</h3>
+                <h3 class="box-title">Liste des Roles</h3>
             	<div class="box-tools">
                     <a href="<?php echo site_url('role/add'); ?>" class="btn btn-success btn-sm">Add</a> 
                 </div>
@@ -11,7 +11,7 @@
                 <table class="table table-striped">
                     <tr>
 						<th>ID</th>
-						<th>Name</th>
+						<th>Nom</th>
 						<th>Actions</th>
                     </tr>
                     <?php foreach($role as $r){ ?>

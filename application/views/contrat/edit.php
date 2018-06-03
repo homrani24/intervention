@@ -2,16 +2,16 @@
     <div class="col-md-12">
       	<div class="box box-info">
             <div class="box-header with-border">
-              	<h3 class="box-title">Contrat Edit</h3>
+              	<h3 class="box-title">Modifier Contrat</h3>
             </div>
 			<?php echo form_open('contrat/edit/'.$contrat['id']); ?>
 			<div class="box-body">
 				<div class="row clearfix">
 				<div class="col-md-6">
-						<label for="id_company" class="control-label">Company</label>
+						<label for="id_company" class="control-label">société</label>
 						<div class="form-group">
 							<select name="id_company" class="form-control">
-								<option value="">select company</option>
+								<option value="">sélectionnez la société</option>
 								<?php 
 								foreach($all_company as $company)
 								{
@@ -24,7 +24,7 @@
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="date_deb" class="control-label">Date Deb</label>
+						<label for="date_deb" class="control-label">Date Début</label>
 						<div class="form-group">
 							<input type="text" name="date_deb" value="<?php echo ($this->input->post('date_deb') ? $this->input->post('date_deb') : $contrat['date_deb']); ?>" class="has-datepicker form-control" id="date_deb" />
 						</div>
@@ -46,7 +46,7 @@
 			</div>
 			<div class="box-footer">
             	<button type="submit" class="btn btn-success">
-					<i class="fa fa-check"></i> Save
+					<i class="fa fa-check"></i> Envoyer
 				</button>
 	        </div>				
 			<?php echo form_close(); ?>

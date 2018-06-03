@@ -2,7 +2,7 @@
     <div class="col-md-12">
       	<div class="box box-info">
             <div class="box-header with-border">
-              	<h3 class="box-title">User Edit</h3>
+              	<h3 class="box-title">Modifier Utilisateur</h3>
             </div>
 			<?php echo form_open('user/edit/'.$user['id']); ?>
 			<div class="box-body">
@@ -24,7 +24,7 @@
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="password" class="control-label">Password</label>
+						<label for="password" class="control-label">Mot de passe</label>
 						<div class="form-group">
 							<input type="text" name="password" value="<?php echo ($this->input->post('password') ? $this->input->post('password') : $user['password']); ?>" class="form-control" id="password" />
 						</div>
@@ -36,13 +36,13 @@
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="name" class="control-label">Name</label>
+						<label for="name" class="control-label">Nom</label>
 						<div class="form-group">
 							<input type="text" name="name" value="<?php echo ($this->input->post('name') ? $this->input->post('name') : $user['name']); ?>" class="form-control" id="name" />
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="mobile" class="control-label">Mobile</label>
+						<label for="mobile" class="control-label">Téléphone</label>
 						<div class="form-group">
 							<input type="text" name="mobile" value="<?php echo ($this->input->post('mobile') ? $this->input->post('mobile') : $user['mobile']); ?>" class="form-control" id="mobile" />
 						</div>
@@ -57,7 +57,7 @@
 			</div>
 			<div class="box-footer">
             	<button type="submit" class="btn btn-success">
-					<i class="fa fa-check"></i> Save
+					<i class="fa fa-check"></i> Envoyer
 				</button>
 	        </div>				
 			<?php echo form_close(); ?>

@@ -2,16 +2,16 @@
     <div class="col-md-12">
       	<div class="box box-info">
             <div class="box-header with-border">
-              	<h3 class="box-title">Intervention Add</h3>
+              	<h3 class="box-title">Ajouter Intervention</h3>
             </div>
             <?php echo form_open('intervention/add'); ?>
           	<div class="box-body">
           		<div class="row clearfix">
 					<div class="col-md-6">
-						<label for="id_company" class="control-label">Company</label>
+						<label for="id_company" class="control-label">Société</label>
 						<div class="form-group">
 							<select name="id_company" class="form-control">
-								<option value="">select company</option>
+								<option value="">sélectionnez la société </option>
 								<?php 
 								foreach($all_company as $company)
 								{
@@ -24,10 +24,10 @@
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="id_invention" class="control-label">Intervonant</label>
+						<label for="id_invention" class="control-label">Intervenant</label>
 						<div class="form-group">
 							<select name="id_invention" class="form-control">
-								<option value="">select </option>
+								<option value="">sélectionnez intervenant </option>
 								<?php 
 								foreach($all_user as $company)
 								{
@@ -57,7 +57,7 @@
 			</div>
           	<div class="box-footer">
             	<button type="submit" class="btn btn-success">
-            		<i class="fa fa-check"></i> Save
+            		<i class="fa fa-check"></i> Envoyer
             	</button>
           	</div>
             <?php echo form_close(); ?>
