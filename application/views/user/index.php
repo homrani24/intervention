@@ -25,6 +25,7 @@
 						<td><?php echo $u['name']; ?></td>
 						<td><?php echo $u['mobile']; ?></td>
 						<td>
+                            <a href="<?php echo site_url('user/last_login/'.$u['id']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Dernière connexion</a> 
                             <a href="<?php echo site_url('user/edit/'.$u['id']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
                             <a href="<?php echo site_url('user/remove/'.$u['id']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
                         </td>

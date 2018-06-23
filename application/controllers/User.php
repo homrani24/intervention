@@ -17,8 +17,13 @@ class User extends CI_Controller{
     function index()
     {
         $data['user'] = $this->User_model->get_all_user();
-        
         $data['_view'] = 'user/index';
+        $this->load->view('layouts/main',$data);
+    }
+    function last_login($id)
+    {
+        $data['user'] = $this->User_model->login_info($id);
+        $data['_view'] = 'user/login_info';
         $this->load->view('layouts/main',$data);
     }
     function client()

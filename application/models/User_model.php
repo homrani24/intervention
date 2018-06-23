@@ -52,6 +52,12 @@ class User_model extends CI_Model
         $this->db->where('role', 3);
         $this->db->order_by('id', 'desc');
         return $this->db->get('user')->result_array();
+        
+    }
+    function login_info($id)
+    {
+        return $this->db->get_where('log_history',array('id_user'=>$id))->row_array();
+        
     }
       
     

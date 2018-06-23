@@ -34,8 +34,10 @@ class Auth_model extends CI_Model {
                     'role' => $row->role,
                     'email' => $row->email
                 );
+                $loginInfo = array("id_user"=>$row->id,  "ip_adress"=>$_SERVER['REMOTE_ADDR'],"date"=> date('Y-m-d H:i:s'), "platform"=>$_SERVER['HTTP_USER_AGENT']);
+
                 $this->session->set_userdata('logged_in', $sess_data);
-                $this->update_last_login($row->users_id);
+                $this->update_last_login($loginInfo);
         } else {
             $notif['message'] = 'Username or password incorrect !';
             $notif['type'] = 'danger';
@@ -48,9 +50,10 @@ class Auth_model extends CI_Model {
      * 
      */
 
-    private function update_last_login($users_id) {
-        $sql = "UPDATE user SET update_at = NOW() WHERE id=" . $this->db->escape($users_id);
-        $this->db->query($sql);
+    private function update_last_login($data) {
+        $this->db->replace('log_history',$data);
+        return $this->db->insert_id();
+
     }
 
     /*

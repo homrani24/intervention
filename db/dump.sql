@@ -72,6 +72,22 @@ CREATE TABLE `intervention` (
 
 insert  into `intervention`(`id`,`date_heure`,`description`,`id_company`,`id_user`,`active`,`id_invention`,`id_client`) values (1,'0000-00-00 00:00:00','wcxdc',0,3,0,NULL,3),(2,'0000-00-00 00:00:00','sdfgrgf drer',0,3,0,NULL,3),(3,'2018-05-27 10:51:54','sdfgrgf drer',0,3,0,NULL,2),(4,'2018-05-27 10:51:54','sdfgrgf drer',0,3,0,NULL,2),(5,'2018-05-27 10:51:54','sdfgrgf drer',0,3,0,NULL,22),(6,'2018-05-27 10:51:54','sdfgrgf drer',0,3,1,2,3),(7,'2018-05-27 10:51:54','sdfgrgf drer',0,3,1,2,3),(8,'0000-00-00 00:00:00','fddffv',1,1,0,2,3),(9,'06/20/2018 10:25 AM','ffgfxbg dfdc',2,NULL,0,2,3);
 
+/*Table structure for table `log_history` */
+
+DROP TABLE IF EXISTS `log_history`;
+
+CREATE TABLE `log_history` (
+  `id_user` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `ip_adress` varchar(50) DEFAULT NULL,
+  `date` datetime DEFAULT NULL,
+  `platform` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id_user`)
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+
+/*Data for the table `log_history` */
+
+insert  into `log_history`(`id_user`,`ip_adress`,`date`,`platform`) values (2,'::1','2018-06-23 16:06:49',NULL),(22,'::1','2018-06-23 16:12:46','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87'),(1,'::1','2018-06-23 16:13:26','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87');
+
 /*Table structure for table `reclamation` */
 
 DROP TABLE IF EXISTS `reclamation`;
